@@ -21,7 +21,7 @@ func newDeck() deck {
 	//for each suit in cardSuits, for each value in cardValues, add a new card of 'value of suit' to the 'cards' deck
 	cards := deck{}
 	//just slice of string (not deck)
-	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Diamonds"}
+	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
 	// replace variable i and j with _ (to fix declared and not used error message)
 	for _, suit := range cardSuits {
@@ -94,6 +94,7 @@ func (d deck) shuffle() {
 	//seed value = source
 	//pass some value to NewSource > use time package
 	//func Now & func (Time)UnixNano >every single time we run program we will use a new time
+	//to generate number of type int64, we use that as seed as source object
 	source := rand.NewSource(time.Now().UnixNano())
 
 	//type Rand
